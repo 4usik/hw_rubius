@@ -49,10 +49,18 @@ h1 {
 .btn {
     background-color: #FB9475;
     border: none;
+    border-radius: 17px;
     color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
     outline: 0;
-    padding: 15px;
     text-align: center;
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    background-color: #00BF78;
 }
 
 .main {
@@ -69,6 +77,7 @@ h1 {
 .header {
     background: #F8F6F7 url(../img/header_bg.png) 0 0 no-repeat;
     flex-shrink: 0;
+    margin-bottom: 100px;
     overflow: hidden;
 }
 
@@ -187,16 +196,11 @@ h1 {
     font-weight: 400;
 }
 
-.hero .btn {
-    background-color: #FB9475;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-    padding: 17px 30px;
-    margin-top: 59px;
+.btn_large {
     border-radius: 24px;
-    border: 0;
+    font-size: 14px;
+    margin-top: 59px;
+    padding: 17px 30px;
 }
 
 .social_vk,
@@ -234,25 +238,31 @@ h1 {
 /*  ----- main -----  */
 
 .section {
-    padding: 90px 165px;
+    padding: 0 165px;
+    margin-bottom: 100px;
 }
 
 .section__title {
     font-size: 48px;
     font-weight: 700;
+    margin: 0 0 32px;
+}
+
+.section_info {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-between;
     margin: 0;
 }
 
-.descr_info {
-    margin: 32px 0 0;
-}
-
-.descr_text {
+.section_text {
+    display: flex;
+    flex-direction: column;
     float: left;
     width: 50%;
 }
 
-.descr_text h3 {
+.section_text-middle {
     display: float;
     font-size: 20px;
     font-weight: 400;
@@ -260,7 +270,7 @@ h1 {
     line-height: 32px;
 }
 
-.descr_text h5 {
+.section_text-small {
     display: float;
     font-size: 16px;
     font-weight: 400;
@@ -363,7 +373,7 @@ details[open] summary::after {
     padding-top: 56px;
 }
 
-.rooms, .cosmetics, .master {
+.rooms, .cosmetics, .expert {
     width: 350px;
     margin: 0;
     padding: 20px 20px 0 20px;
@@ -377,7 +387,7 @@ details[open] summary::after {
     background: url(../img/cosmetics.svg) center top no-repeat; 
 }
 
-.master {
+.expert {
     background: url(../img/master.svg) center top no-repeat; 
 }
 
@@ -394,22 +404,16 @@ details[open] summary::after {
     margin: 12px 0 0;
 }
 
-.popular {
-    margin: 0 164px;
-}
+/* ----- Popular -----*/
 
-.popular h1 {
-    font-size: 36px;
-    margin: 0 0 35px;
-}
-
-.works {
+.section_info-works {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    margin: 0 0 0 -1px;
+    width: 1110px;
 }
 
-.manicure, .gel, .brasilian, .pedicure, .paraffin {
+.section__work {
     margin: 0 30px 48px 0;
     height: 340px;
     width: 340px;
@@ -417,45 +421,169 @@ details[open] summary::after {
     background: url(../img/manicure.png) center top no-repeat; 
 }
 
-.works_figcap {
+.section__figcap {
     padding: 200px 0  0;
 }
 
-.works_figcap-title {
+.section__figcap-title {
     font-size: 18px;
     font-weight: 600;
     margin: 20px 0 8px;
 }
 
-.works p {
+.section__figcap-txt {
+    font-size: 12px;
+    margin: 8px 0 16px;
+}
+
+/*  ----- Prices -----  */
+
+.section__prices {
+    position: relative;
+    height: 465px;
+}
+
+.navigation-prices {
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.navigation__item:active,
+.navigation__item:focus-within {
+    text-decoration: underline;
+    color: #00BF78;
+}
+
+.section__list {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 400px;
+    background-color: #fff;
+}
+
+.section__item {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    padding-bottom: 28px;
+}
+
+.section__item-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.section__item-descr {
+    font-size: 14px;
     margin: 8px 0;
 }
 
-.works .btn {
-    height: 34px;
-    width: 112px;
-    background-color:#FB9475;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: 500;
-    border: none;
-    border-radius: 17px;
-    margin-top: 16px;
-    cursor: pointer;
+.section__item-price {
+    color: #00BF78;
+}
+
+.section__list-haircut {
+    z-index: 2;
+}
+
+.section__list-cosmetology {
+    background-color: #299;
+    z-index: 1;
+}
+.section__list-manicure {
+    background-color: #356;
+}
+.section__list-makeup {
+    background-color: #423;
+}
+.section__list-lash {
+    background-color: #891;
+}
+.section__list-massage {
+    background-color: #921;
+    z-index: 1;
+}
+
+/* ----- Experts -----*/
+
+.section__expert {
+    background-color: #F8F6F7;
+}
+
+.section_info-expert {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.section_figure {
+    width: 100%;
+    margin: 0;
+}
+
+.section_figure-Irina {
+    border-radius: 8px;
+    height: 300px;
+    width: 255px;
+    background: url(../img/expert_Irina.png) center top no-repeat;
+}
+
+.section_figure-Janna {
+    border-radius: 8px;
+    height: 300px;
+    width: 255px;
+    background: url(../img/expert_Janna.png) center top no-repeat;
+}
+
+.section_figure-Alina {
+    border-radius: 8px;
+    height: 300px;
+    width: 255px;
+    background: url(../img/expert_Alina.png) center top no-repeat;
+}
+
+.section_figure-Elena {
+    border-radius: 8px;
+    height: 300px;
+    width: 255px;
+    background: url(../img/expert_Elena.png) center top no-repeat;
+}
+
+.section_figure-Irina:hover,
+.section_figure-Janna:hover,
+.section_figure-Alina:hover,
+.section_figure-Elena:hover {
+    opacity: 50%;
+} /* не успела реализовать затемнение и надпись при наведении:
+еще один div position:absolute bgc: black и opacity 50% + надпись,
+при наведении изменять z-index*/
+
+.section_figure:not(:last-child) {
+    margin-right: 30px;
+}
+
+.section__figcap-expert {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 80px;
+}
+
+.section__figcap-exp {
+    text-transform: uppercase;
 }
 
 
 
-/*  ----- prices -----  */
 
-.price {
-    margin: 0 165px;
-}
 
-.price p {
-    display: inline-block;
-    margin-right: 28px;
-}
+
+
+
 
 
 
@@ -483,16 +611,4 @@ footer {
     text-decoration: underline;
     color: #278AFF;
     padding-top: 8px;
-}
-
-.footer_nav {
-    margin-top: 32px;
-}
-
-.footer_nav li {
-    display: inline;
-}
-
-.footer_nav li:not(:last-child) {
-    margin-right: 28px;
 }

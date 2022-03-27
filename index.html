@@ -46,13 +46,13 @@
             <section class="section">
                 <div class="container">
                     <h1 class="section__title">О салоне</h1>
-                    <div class="section-info">
-                        <div class="descr_text">
-                            <h3>Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</h3>
-                            <h5>Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
-                                а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</h5>      
+                    <div class="section_info">
+                        <div class="section_text">
+                            <span class="section_text-middle">Мир красоты - это уютный салон в самом центре города. Здесь работают профессиональные визажисты, стилисты и мастера татуажа</span>
+                            <span class="section_text-small">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
+                                а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</span>
                                 <details class="spoiler">
-                                    <summary class="descr_spoiler"></summary>
+                                    <summary class="section_spoiler"></summary>
                                     <p class="spoiler_txt">Красота и хороший уход никогда не выходят из моды. Мы приглашаем Вас в место, где гармония обретает форму,
                                         а внешность становится отражением внутреннего мира. Новая жизнь начинается с небольших изменений. Мы помогаем нашим клиентам воплотить их индивидуальность во внешнем облике. Мы создаем стиль – вместе с Вами и для Вас.</p>
                                 </details>
@@ -77,7 +77,7 @@
                                 <p class="adv_figcap-txt">Используем профессиональные материалы высшего качества <br> лучших брендов</p>
                             </figcaption>
                         </figure>
-                        <figure class="master">
+                        <figure class="expert">
                             <figcaption class="adv_figcap">
                                 <span class="adv_figcap-title">Опытные мастера</span>
                                 <p class="adv_figcap-txt">Работают только опытные мастера с чувством стиля. Смотрите наших специалистов в разделе Мастера</p>
@@ -87,76 +87,331 @@
                 </div>
             </section>
             <section class="section">
-                <div>
+                <div class="container">
                     <h1 class="section__title">Популярные услуги</h1>
-                    <div class="works">
-                        <figure class="manicure">
-                            <figcaption class="works_figcap">
-                                <span class="works_figcap-title">Маникюр</span>
-                                <p>Аппаратный, комбинированный или классический.</p>
+                    <div class="section_info-works">
+                        <figure class="section__work">
+                            <figcaption class="section__figcap">
+                                <span class="section__figcap-title">Маникюр</span>
+                                <p class="section__figcap-txt">Аппаратный, комбинированный или классический.</p>
                                 <button class="btn">Записаться</button>
                             </figcaption>
                         </figure>
-                        <figure class="gel">
-                            <figcaption class="works_figcap">
-                                <span class="works_figcap-title">Покрытие гель-лак</span>
-                                <p>Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой полимеризуется в LED-лампе.</p>
+                        <figure class="section__work">
+                            <figcaption class="section__figcap">
+                                <span class="section__figcap-title">Покрытие гель-лак</span>
+                                <p class="section__figcap-txt">Гель-лак наносится в несколько слоев с использование базы и топа. Каждый слой полимеризуется в LED-лампе.</p>
                                 <button class="btn">Записаться</button>
                             </figcaption>
                         </figure>
-                        <figure class="brasilian">
-                            <figcaption class="works_figcap">
-                                <span class="works_figcap-title">Бразильский маникюр</span>
-                                <p>Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
+                        <figure class="section__work">
+                            <figcaption class="section__figcap">
+                                <span class="section__figcap-title">Бразильский маникюр</span>
+                                <p class="section__figcap-txt">Выполняется в одноразовых перчатках наполненных увлажняющим лосьоном.</p>
                                 <button class="btn">Записаться</button>
                             </figcaption>
                         </figure>
-                        <figure class="pedicure">
-                            <figcaption class="works_figcap">
-                                <span class="works_figcap-title">Педикюр</span>
-                                <p>Аппаратный, комбинированный или классический.</p>
+                        <figure class="section__work">
+                            <figcaption class="section__figcap">
+                                <span class="section__figcap-title">Педикюр</span>
+                                <p class="section__figcap-txt">Аппаратный, комбинированный или классический.</p>
                                 <button class="btn">Записаться</button>
                             </figcaption>
                         </figure>
-                        <figure class="paraffin">
-                            <figcaption class="works_figcap">
-                                <span class="works_figcap-title">Парафинотерапия</span>
-                                <p>Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит токсины и укрепляет суставы.
-                                    <button class="btn">Записаться</button>
-                                </p>
+                        <figure class="section__work">
+                            <figcaption class="section__figcap">
+                                <span class="section__figcap-title">Парафинотерапия</span>
+                                <p class="section__figcap-txt">Благодаря этой процедуре увлажнение кожи увеличивается на 80%, также выводит токсины и укрепляет суставы.</p>
+                                <button class="btn">Записаться</button>
                             </figcaption>
                         </figure>
                     </div>
                 </div>
             </section>  
             <section class="section">
-                <div>
+                <div class="container section__prices">
                     <h1 class="section__title">Услуги и цены</h1>
-                    <div class="works_price">
-                        <p>Стрижка и укладка</p>
-                        <p>Косметология</p>
-                        <p>Маникюр и педикюр</p>
-                        <p>Макияж</p>
-                        <p>Брови и ресницы</p>
-                        <p>Массаж</p>
+                    <nav class="navigation navigation-prices">
+                        <ul class="navigation__list">
+                            <li class="navigation__item"><a href="#" onclick="return false">Стрижка и укладка</a></li>
+                            <li class="navigation__item"><a href="#" onclick="return false">Косметология</a></li>
+                            <li class="navigation__item"><a href="#" onclick="return false">Маникюр и педикюр</a></li>
+                            <li class="navigation__item"><a href="#" onclick="return false">Макияж</a></li>
+                            <li class="navigation__item"><a href="#" onclick="return false">Брови и ресницы</a></li>
+                            <li class="navigation__item"><a href="#" onclick="return false">Массаж</a></li>
+                        </ul>
+                    </nav>
+                    <div class="section__list section__list-haircut">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Женская стрижка</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Стрижка бороды и усов</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Мужская стрижка</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Экспресс укладка</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Детский Стиль</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Укладка дневная</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Креативный Стиль</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">1200 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Прическа вечерняя (свадебная)</span>
+                                <p class="section__item-descr">Короткие волосы</p>
+                            </div>
+                            <h3 class="section__item-price">3000 ₽</h3>
+                        </div>
+                    </div>
+
+                    <div class=" section__list section__list-cosmetology">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Чистка</span>
+                                <p class="section__item-descr">Ручная</p>
+                            </div>
+                            <h3 class="section__item-price">1000 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title">Чистка</span>
+                                <p class="section__item-descr">Вакуумная</p>
+                            </div>
+                            <h3 class="section__item-price">3000 ₽</h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                    </div>
+
+                    <div class="section__list section__list-manicure">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                    </div>
+
+                    <div class="section__list section__list-makeup">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                    </div>
+
+                    <div class="section__list section__list-lash">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                    </div>
+
+                    <div class="section__list section__list-massage">
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                        <div class="section__item">
+                            <div>
+                                <span class="section__item-title"></span>
+                                <p class="section__item-descr"></p>
+                            </div>
+                            <h3 class="section__item-price"></h3>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="section section__expert">
+                <div class="container">
+                    <h1 class="section__title">Мастера</h1>
+                    <span>Дружная команда настоящих профессионалов</span>
+                    <div class="section_info-expert">
+                        <figure class="section_figure">
+                            <div class="section_figure-Irina"></div>
+                            <figcaption class="section__figcap-expert">
+                                <span class="section__figcap-title">Краснова Ирина</span>
+                                <p class="section__figcap-txt">Мастер ногтевого сервиса</p>
+                                <span class="section__figcap-exp">опыт работы 5 лет</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="section_figure">
+                            <div class="section_figure-Janna"></div>
+                            <figcaption class="section__figcap-expert">
+                                <span class="section__figcap-title">Калилова Жанна</span>
+                                <p class="section__figcap-txt">Визажист-стилист</p>
+                                <span class="section__figcap-exp">опыт работы 5 лет</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="section_figure">
+                            <div class="section_figure-Alina"></div>
+                            <figcaption class="section__figcap-expert">
+                                <span class="section__figcap-title">Киселева Алина</span>
+                                <p class="section__figcap-txt">Парикмахер</p>
+                                <span class="section__figcap-exp">опыт работы 5 лет</span>
+                            </figcaption>
+                        </figure>
+                        <figure class="section_figure">
+                            <div class="section_figure-Elena"></div>
+                            <figcaption class="section__figcap-expert">
+                                <span class="section__figcap-title">Иванова Елена</span>
+                                <p class="section__figcap-txt">Мастер ногтевого сервиса</p>
+                                <span class="section__figcap-exp">опыт работы 5 лет</span>
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </section>
+
         </main>
         <footer>
             <div>
                 <p class="copy"> &copy; 2020 «Море красоты»
                     <a class="polit" href="#">Политика конфиденциальности</a>
                 </p>
-                            
-                <div class="nav">
-                    <ul class="footer_nav">
-                        <li><a href="#">Услуги и цены</a></li>
-                        <li><a href="#">Мастера</a></li>
-                        <li><a href="#">Наши работы</a></li>
-                        <li><a href="#">Контакты</a></li>
+                <nav class="navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item"><a href="#">Услуги и цены</a></li>
+                        <li class="navigation__item"><a href="#">Мастера</a></li>
+                        <li class="navigation__item"><a href="#">Наши работы</a></li>
+                        <li class="navigation__item"><a href="#">Контакты</a></li>
                     </ul>
-                </div>
+                </nav>
             </div>
         </footer>
     </div>
