@@ -312,7 +312,7 @@ details[open] summary::after {
     padding: 0;
 }
 
-.video_presentation {
+.videoPresentation {
     float: right;
     height: 296px;
     width: 445px;
@@ -330,7 +330,7 @@ details[open] summary::after {
 	z-index: 1;
 }
 
-.video-presentation_btn-play {
+.videoPresentation-play {
 	background: url(../img/icon-play.png) center center no-repeat;
 	padding: 32px;
 	position: absolute;
@@ -343,12 +343,12 @@ details[open] summary::after {
     cursor: pointer;
 }
 
-.video-presentation_btn-play:hover {
+.videoPresentation-play:hover {
     transform: scale(1.1) translate(-45%);
     transition: 0.3s;
 }
 
-.video-presentation_title {
+.videoPresentation__title {
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 500;
@@ -362,46 +362,40 @@ details[open] summary::after {
     padding: 4px;
 }
 
-.adv {
+.section__adv {
     clear: both;
     display: flex;
     text-align: center;
     padding: 100px 0 10px;
 }
 
-.adv_figcap {
+.section__figcap-adv {
     padding-top: 56px;
 }
 
-.rooms, .cosmetics, .expert {
+.section__adv-rooms, .section__adv-cosmetics, .section__adv-expert {
     width: 350px;
     margin: 0;
     padding: 20px 20px 0 20px;
 }
 
-.rooms {
+.section__adv-rooms {
     background: url(../img/rooms.svg) center top no-repeat;
 }
 
-.cosmetics {
+.section__adv-cosmetics {
     background: url(../img/cosmetics.svg) center top no-repeat; 
 }
 
-.expert {
+.section__adv-expert {
     background: url(../img/master.svg) center top no-repeat; 
 }
 
-.adv_figcap-title {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 8px;
-}
-
-.adv_figcap-txt {
+.section__figcap_txt-m {
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
-    margin: 12px 0 0;
+    margin: 0;
 }
 
 /* ----- Popular -----*/
@@ -425,13 +419,13 @@ details[open] summary::after {
     padding: 200px 0  0;
 }
 
-.section__figcap-title {
+.section__figcap_title {
     font-size: 18px;
     font-weight: 600;
-    margin: 20px 0 8px;
+    padding: 20px 0 8px;
 }
 
-.section__figcap-txt {
+.section__figcap_txt-s {
     font-size: 12px;
     margin: 8px 0 16px;
 }
@@ -512,6 +506,7 @@ details[open] summary::after {
 
 .section__expert {
     background-color: #F8F6F7;
+    padding-top: 80px;
 }
 
 .section_info-expert {
@@ -520,12 +515,27 @@ details[open] summary::after {
     padding-top: 24px;
 }
 
+.darkening {
+    position: absolute;
+    border-radius: 8px;
+    height: 300px;
+    width: 255px;
+    background-color: black;
+    opacity: 50%;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+}
+
 .section_figure {
     width: 100%;
     margin: 0;
+    position: relative;
 }
 
 .section_figure-Irina {
+    position: absolute;
+    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -533,6 +543,8 @@ details[open] summary::after {
 }
 
 .section_figure-Janna {
+    position: absolute;
+    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -540,6 +552,8 @@ details[open] summary::after {
 }
 
 .section_figure-Alina {
+    position: absolute;
+    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -547,6 +561,8 @@ details[open] summary::after {
 }
 
 .section_figure-Elena {
+    position: absolute;
+    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -557,10 +573,10 @@ details[open] summary::after {
 .section_figure-Janna:hover,
 .section_figure-Alina:hover,
 .section_figure-Elena:hover {
-    opacity: 50%;
-} /* не успела реализовать затемнение и надпись при наведении:
-еще один div position:absolute bgc: black и opacity 50% + надпись,
-при наведении изменять z-index*/
+    z-index: 1;
+}
+/* не получается сцентрировать текст по вертикали
+и не понимаю почему hover срабатывает не по всему размеру div */
 
 .section_figure:not(:last-child) {
     margin-right: 30px;
@@ -571,9 +587,12 @@ details[open] summary::after {
     flex-direction: column;
     border-radius: 8px;
     margin-bottom: 80px;
+    padding-top: 300px;
 }
 
 .section__figcap-exp {
+    font-size: 12px;
+    margin-top: 20px;
     text-transform: uppercase;
 }
 
