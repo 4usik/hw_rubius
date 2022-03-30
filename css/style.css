@@ -520,11 +520,16 @@ details[open] summary::after {
     border-radius: 8px;
     height: 300px;
     width: 255px;
+    text-align: center;
+    opacity: 0%;
+    z-index: 2;
+}
+/* не получается сцентрировать текст по вертикали */
+
+.darkening:hover {
     background-color: black;
     opacity: 50%;
     color: #fff;
-    text-align: center;
-    z-index: 2;
 }
 
 .section_figure {
@@ -534,8 +539,6 @@ details[open] summary::after {
 }
 
 .section_figure-Irina {
-    position: absolute;
-    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -543,8 +546,6 @@ details[open] summary::after {
 }
 
 .section_figure-Janna {
-    position: absolute;
-    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -552,8 +553,6 @@ details[open] summary::after {
 }
 
 .section_figure-Alina {
-    position: absolute;
-    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
@@ -561,22 +560,18 @@ details[open] summary::after {
 }
 
 .section_figure-Elena {
-    position: absolute;
-    z-index: 3;
     border-radius: 8px;
     height: 300px;
     width: 255px;
     background: url(../img/expert_Elena.png) center top no-repeat;
 }
 
-.section_figure-Irina:hover,
-.section_figure-Janna:hover,
-.section_figure-Alina:hover,
-.section_figure-Elena:hover {
-    z-index: 1;
-}
-/* не получается сцентрировать текст по вертикали
-и не понимаю почему hover срабатывает не по всему размеру div */
+/* .section_figure-Irina:hover, */
+/* .section_figure-Janna:hover, */
+/* .section_figure-Alina:hover, */
+/* .section_figure-Elena:hover { */
+    /* z-index: 1; */
+/* } */
 
 .section_figure:not(:last-child) {
     margin-right: 30px;
@@ -587,7 +582,7 @@ details[open] summary::after {
     flex-direction: column;
     border-radius: 8px;
     margin-bottom: 80px;
-    padding-top: 300px;
+    /* padding-top: 300px; */
 }
 
 .section__figcap-exp {
