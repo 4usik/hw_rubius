@@ -25,6 +25,10 @@ a {
 	text-decoration: none;
 }
 
+img {
+    border-radius: 8px;
+}
+
 .container {
     margin: auto;
     padding: 0 15px;
@@ -312,12 +316,36 @@ details[open] summary::after {
     padding: 0;
 }
 
-.videoPresentation {
+.video-presentation {
     float: right;
-    height: 296px;
-    width: 445px;
+    width: 45%;
+    border-radius: 8px;
     background: url(../img/img_video.png) 0 0 no-repeat;
+    background-size: cover;
     position: relative;
+}
+
+.video-presentation::after {
+    content: '';
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.video-presentation::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../img/icon-play.png) center center no-repeat;
+    z-index: 3;
 }
 
 .video {
@@ -327,11 +355,12 @@ details[open] summary::after {
 	z-index: 1;
 }
 
-.videoPresentation-play {
-	background: url(../img/icon-play.png) center center no-repeat;
+ .video-presentation-play {
+	// background: url(../img/icon-play.png) center center no-repeat;
 	padding: 32px;
 	position: absolute;
-	z-index: 2;
+    opacity: 0;
+	z-index: 4;
     left: 50%;
     transform: translate(-50%);
 	top: 100px;
@@ -340,12 +369,12 @@ details[open] summary::after {
     cursor: pointer;
 }
 
-.videoPresentation-play:hover {
-    transform: scale(1.1) translate(-45%);
-    transition: 0.3s;
-}
+// .video-presentation-play:hover {
+    // transform: scale(1.1) translate(-45%);
+    // transition: 0.3s;
+// }
 
-.videoPresentation__title {
+.video-presentation__title {
 	color: #ffffff;
 	font-size: 16px;
 	font-weight: 500;
@@ -406,20 +435,17 @@ details[open] summary::after {
 
 .section__work {
     margin: 0 30px 48px 0;
-    height: 340px;
-    width: 340px;
-    border-radius: 8px;
-    background: url(../img/manicure.png) center top no-repeat; 
+    width: 30%;
 }
 
 .section__figcap {
-    padding: 200px 0  0;
+    padding: 0;
 }
 
 .section__figcap_title {
     font-size: 18px;
     font-weight: 600;
-    padding: 20px 0 8px;
+    margin: 20px 0 8px;
 }
 
 .section__figcap_txt-s {
@@ -511,33 +537,8 @@ details[open] summary::after {
     display: flex;
     justify-content: space-between;
     padding-top: 24px;
-}
-
-.darkening {
-    position: absolute;
-    border-radius: 8px;
-    height: 300px;
-    width: 255px;
-    text-align: center;
-    opacity: 0%;
-    z-index: 2;
     cursor: pointer;
 }
-
-.darkening:before {
-    content: 'Записаться к мастеру';
-    color: #fff;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 17px;
-    text-align: center;
-    width: 50%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-/* не могу побороть наследование прозрачности от opacity */
 
 .section_figure {
     width: 100%;
@@ -545,38 +546,34 @@ details[open] summary::after {
     position: relative;
 }
 
-.section_figure-Irina {
-    border-radius: 8px;
-    height: 300px;
-    width: 255px;
-    background: url(../img/expert_Irina.png) center top no-repeat;
+// .section_figure-expert {
+    // width: 30%;
+    // background-size: cover;
+// }
+
+.section_figure-expert:hover::before {
+    content: 'Записаться к мастеру';
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 32%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
 }
 
-.section_figure-Janna {
+.section_figure-expert:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 192px;
     border-radius: 8px;
-    height: 300px;
-    width: 255px;
-    background: url(../img/expert_Janna.png) center top no-repeat;
-}
-
-.section_figure-Alina {
-    border-radius: 8px;
-    height: 300px;
-    width: 255px;
-    background: url(../img/expert_Alina.png) center top no-repeat;
-}
-
-.section_figure-Elena {
-    border-radius: 8px;
-    height: 300px;
-    width: 255px;
-    background: url(../img/expert_Elena.png) center top no-repeat;
-}
-
-.darkening:hover {
-    background-color: #000;
-    opacity: 50%;
-    transition: 0.25s;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 .section_figure:not(:last-child) {
@@ -588,7 +585,6 @@ details[open] summary::after {
     flex-direction: column;
     border-radius: 8px;
     margin-bottom: 80px;
-    /* padding-top: 300px; */
 }
 
 .section__figcap-exp {
@@ -666,15 +662,18 @@ details[open] summary::after {
 }
 
 .example:hover:before {
-    content: url(../img/search.svg);
+    content: url(../img/search.svg) 'Увеличить';
+    /* как сделать выравнивание текста по центру??? */
     height: 48px;
     width: 48px;
     position: absolute;
+    color: #fff;
     left: 50%;
     top: 40%;
     transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
 }
-    
+/*    
 .example:hover:after {
     content: 'Увеличить';
     height: 48px;
@@ -686,6 +685,19 @@ details[open] summary::after {
     color: #fff;
     font-size: 14px;
     font-weight: 500px;
+    z-index: 2;
+} /* так текст по центру, но как тогда сделать затемнение? */
+
+.example:hover:after {
+    content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-radius: 8px;
+background: rgba(0, 0, 0, 0.5);
+z-index: 2;
 }
 
 .section__container-brands {
