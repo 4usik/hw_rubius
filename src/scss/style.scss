@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Raleway:300,400,700,800|Roboto:300,400i,500,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
 
 html {
     box-sizing: border-box;
@@ -24,17 +24,12 @@ html, body {
 a {
 	text-decoration: none;
 }
-/*
-h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-}*/
 
 .container {
     margin: auto;
     padding: 0 15px;
-    width: 1100px;   
+    width: 1100px;
+    position: relative;
 }
 
 .wrapper {
@@ -65,7 +60,7 @@ h1 {
 
 .main {
     flex: 1;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 
 /*  ----- header -----  */
@@ -154,7 +149,6 @@ h1 {
 .phone-info span {
     font-size: 11px;
     font-weight: 400;
-    /*padding-top: 8px;*/
 }
 
 .hero {
@@ -171,7 +165,7 @@ h1 {
 }
 
 .social li:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 28px;
 }
 
 .social_vertical {
@@ -239,13 +233,18 @@ h1 {
 
 .section {
     padding: 0 165px;
+}
+
+.section:not(:last-child) {
     margin-bottom: 100px;
 }
 
 .section__title {
     font-size: 48px;
     font-weight: 700;
-    margin: 0 0 32px;
+    margin: 0 0 32px 0;
+    padding: 0;
+    width: 50%;
 }
 
 .section_info {
@@ -276,6 +275,7 @@ h1 {
     font-weight: 400;
     margin: 16px 0;
     line-height: 26px;
+    width: 100%;
 }
 
 
@@ -318,9 +318,6 @@ details[open] summary::after {
     width: 445px;
     background: url(../img/img_video.png) 0 0 no-repeat;
     position: relative;
-	text-align: center;
-    overflow: hidden;
-    opacity: 1.5;
 }
 
 .video {
@@ -443,7 +440,7 @@ details[open] summary::after {
 }
 
 .navigation__item:active,
-.navigation__item:focus-within { 
+.navigation__item:focus-within {
     text-decoration: underline;
     color: #00BF78;
 }
@@ -467,12 +464,13 @@ details[open] summary::after {
 
 .section__item-title {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 8px;
 }
 
 .section__item-descr {
     font-size: 14px;
+    line-height: 20px;
     margin: 8px 0;
 }
 
@@ -523,30 +521,32 @@ details[open] summary::after {
     text-align: center;
     opacity: 0%;
     z-index: 2;
-}
-/* не получается сцентрировать текст по вертикали */
-
-.darkening {
     cursor: pointer;
-    }
+}
 
-.darkening:hover {
-    background-color: black;
-    opacity: 50%;
+.darkening:before {
+    content: 'Записаться к мастеру';
     color: #fff;
-    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-align: center;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
 }
+/* не могу побороть наследование прозрачности от opacity */
 
 .section_figure {
     width: 100%;
     margin: 0;
     position: relative;
-    cursor: pointer;
 }
 
 .section_figure-Irina {
     border-radius: 8px;
-    cursor: pointer;
     height: 300px;
     width: 255px;
     background: url(../img/expert_Irina.png) center top no-repeat;
@@ -573,12 +573,11 @@ details[open] summary::after {
     background: url(../img/expert_Elena.png) center top no-repeat;
 }
 
-/* .section_figure-Irina:hover, */
-/* .section_figure-Janna:hover, */
-/* .section_figure-Alina:hover, */
-/* .section_figure-Elena:hover { */
-    /* z-index: 1; */
-/* } */
+.darkening:hover {
+    background-color: #000;
+    opacity: 50%;
+    transition: 0.25s;
+}
 
 .section_figure:not(:last-child) {
     margin-right: 30px;
@@ -598,17 +597,201 @@ details[open] summary::after {
     text-transform: uppercase;
 }
 
-.paggenation {
-    /* display: flex; */
-    /* justify-content: space-between; */
+/* ----- examples ----- */
+
+.section__pgn {
+    position: absolute;
+    right: 0;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    top: 0;
 }
 
+.pgn {
+    top: 0;
+    background-color: #fff;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px 0 0 32px;
+    padding: 0;
+}
 
+.pgn:hover {
+    background-color: #F8F6F7;
+}
 
+.pgn-previous {
+    background: url(../img/previous.svg) center center no-repeat;
+}
 
+.pgn-next {
+    background: url(../img/next.svg) center center no-repeat;
+    }
 
+.section__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -165px 100px;
+}
 
+.example {
+    height: 325px;
+    width: 325px;
+    cursor: pointer;
+    border-radius: 8px;
+}
 
+.example1 {
+    background: url(../img/example1.png) center center no-repeat;
+}
+
+.example2 {
+    background: url(../img/example2.png) center center no-repeat;
+}
+
+.example3 {
+    background: url(../img/example3.png) center center no-repeat;
+}
+
+.example4 {
+    background: url(../img/example4.png) center center no-repeat;
+}
+
+.example:hover {
+    transform: scale(110%);
+    transition: 0.3s;
+}
+
+.example:hover:before {
+    content: url(../img/search.svg);
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+}
+    
+.example:hover:after {
+    content: 'Увеличить';
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500px;
+}
+
+.section__container-brands {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.brand {
+    height: 65px;
+    width: 155px;
+    opacity: 30%;
+    margin: 40px 25px 0;
+}
+
+// .brand:not(:last-child) {
+    // margin-right: 50px;
+// }
+
+.brand1 {
+    background: url(../img/wella.svg) center center no-repeat;
+}
+
+.brand2 {
+    background: url(../img/schwarzkopf.svg) center center no-repeat;
+}
+
+.brand3 {
+    background: url(../img/tigi.svg) center center no-repeat;
+}
+
+.brand4 {
+    background: url(../img/londa.svg) center center no-repeat;
+}
+
+.brand5 {
+    background: url(../img/nioxin.svg) center center no-repeat;
+}
+
+/* ----- Contacts -----*/
+
+.section_contacts {
+    background-color: #F8F6F7;
+}
+
+.container_form {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 95px 40px 0;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.section__title_par {
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form_phone-info {
+    text-decoration: none;
+    color: #333;
+}
+
+.section_contacts-href {
+    color: #278AFF;
+    text-decoration: underline;
+}
+
+.form {
+    border-radius: 8px;
+    background-color: #fff;
+    width: 45%;
+    padding: 24px 35px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    padding: 16px;
+    width: 375px;
+    border-radius: 8px;
+    border: 8mm 2px #A0A0A0;
+    opacity: 50%;
+}
+
+.btn_submit {
+    padding: 17px 0;
+    text-align: center;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    width: 100%;
+}
+
+// .form a,
+// .form span {
+    // font-size: 12px;
+    // font-weight: 300;
+// }
+
+.form p {
+    padding: 0;
+    margin: 16px 0;
+}
 
 
 
@@ -616,13 +799,15 @@ details[open] summary::after {
 
 footer {
     position: absolute;
+    display: flex;
+    width: 100%;
     bottom: 0px;
-    display: flex;  
     font-size: 12px;
     font-weight: 400;
     padding: 0px 165px;
-    width: 1440px;
     justify-content: space-between;
+    flex-direction: row;
+    align-items: baseline;
 }
 
 .copy {
