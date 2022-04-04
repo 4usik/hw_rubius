@@ -32,10 +32,10 @@
         margin-top: 59px;
         padding: 17px 30px;
     }
-}
 
-.btn:hover {
-    background-color: $green;
+    &:hover {
+        background-color: $green;
+    }
 }
 
 .main {
@@ -86,15 +86,14 @@
     list-style: none;
     margin: 0;
     padding: 0;
-}
 
-.navigation__list a:hover {
-    color: $green;
+    a:hover {
+        color: $green;
+    }
 }
 
 .navigation__item:not(:last-child) {
     margin-right: 28px;
-    
 }
 
 .phone-info {
@@ -312,7 +311,7 @@ details[open] summary::after {
     width: 45%;
     border-radius: 8px;
     background: url(../img/img_video.png) 0 0 no-repeat;
-    background-size: cover;
+    background-size: contain;
     position: relative;
 
     &__title {
