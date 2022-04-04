@@ -1,0 +1,82 @@
+@media only screen and (max-width: 480px) {
+    
+    .container {
+        margin: 35px;
+    }
+    
+    .header {
+        margin-bottom: 50px;
+    }
+    
+    .header .container {
+        padding: 0;
+    }
+
+    .header__top {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 0px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .navigation__list {
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+        
+    .navigation__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 8px; 
+    }
+            
+    .phone-info {
+        text-align: center;
+    }
+
+    .hero {
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin: 0;
+    }
+
+    .hero h1 {
+        margin: 20px;
+        font-size: 32px;
+    }
+    
+    .header__social {
+        position: absolute;
+        top: 80%;
+        left: 44%;
+        transform: translateY(-1%);
+    }
+
+    .social_vertical {
+        flex-direction: row;
+    }
+    
+    .girl {
+        display: none;
+    }
+    
+    .girl figure {
+        display: none;
+    }
+    .section {
+        padding: 0 50px;
+    }
+
+    .section__title {
+        text-align: center;
+        margin: 32px 0;
+        font-size: 32px;
+    }
+        
+}
