@@ -77,6 +77,11 @@
         text-align: center;
         margin: 32px 0;
         font-size: 32px;
+    }        
+}
+
+@media only screen and (min-height: 100px) {
+    .hamb__menu.active {
+        overflow-y: scroll;
     }
-        
 }
