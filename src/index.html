@@ -8,6 +8,8 @@
     <!-- <link href="./css/normalize.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"> -->
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 </head>
 <body>
     <div class="wrapper">
@@ -430,23 +432,25 @@
                     </div>
                 </div>
             </section>
-            <section class="section section__examples">
+            <section class="section section__gallery">
                 <div class="container">
                     <h1 class="section__title">Наши работы</h1>
-                    <ul class="section__pgn">
+                    <ul class="section__actions">
                         <li>
-                            <button class="pgn pgn-previous"></button>
+                            <button class="pgn slider-prev"></button>
                         <li>
-                            <button class="pgn pgn-next"></button>
+                            <button class="pgn slider-next"></button>
                     </ul>
-                    <div class="section__container">
-                        <div class="example example1"></div>
-                        <div class="example example2"></div>
-                        <div class="example example3"></div>
-                        <div class="example example4"></div>
+                    <div class="gallery__slider">
+                        <div class="gallery__slider-example"><a href="img/example1.png"></a><img src="img/example1.png" alt="example1"></div>
+                        <div class="gallery__slider-example"><a href="img/example2.png"></a><img src="img/example2.png" alt="example2"></div>
+                        <div class="gallery__slider-example"><a href="img/example3.png"></a><img src="img/example3.png" alt="example3"></div>
+                        <div class="gallery__slider-example"><a href="img/example4.png"></a><img src="img/example4.png" alt="example4"></div>
+                        <div class="gallery__slider-example"><a href="img/example1.png"></a><img src="img/example1.png" alt="example1"></div>
+                        <div class="gallery__slider-example"><a href="img/example2.png"></a><img src="img/example2.png" alt="example2"></div>
                     </div>
-                    <div class="section__container-brands">
-                        <span class="section_text-small">Бренды, которые мы используем в работе</span>
+                    <div class="gallery-brands">
+                        <span class="sesmall">Бренды, которые мы используем в работе</span>
                         <div class="brand brand1"></div>
                         <div class="brand brand2"></div>
                         <div class="brand brand3"></div>
@@ -503,6 +507,8 @@
         </footer>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="script/script.js"></script>
 
 </body>

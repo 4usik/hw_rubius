@@ -6,3 +6,11 @@ menuBtn.addEventListener('click', function(){
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
 })
+
+$(document).ready(function(){
+    $('.gallery__slider').slick({
+        slidesToShow: 4,
+        prevArrow: '.slider-prev',
+        nextArrow: '.slider-next'
+    });
+  });
