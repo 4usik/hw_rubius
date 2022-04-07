@@ -5,7 +5,10 @@
 @import './variables';
 @import './common';
 @import './mixins';
-@import './hamburger';
+
+.hamb {
+    display: none;
+}
 
 .wrapper {
     display: flex;

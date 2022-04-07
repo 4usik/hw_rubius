@@ -1,11 +1,11 @@
 
 .hamb {
-    // background-color: #fff;
+    display: flex;
 }
 
 .hamb_header {
     display: flex;
-    justify-content: flex-end;
+    // justify-content: flex-end;
 }
 
 .hamb__menu-btn {
@@ -14,7 +14,7 @@
     position: relative;
     z-index: 5;
     overflow: hidden;
-    margin-right: 50px;
+    margin-left: 50px;
 }
 
 .hamb__menu-btn span {
@@ -39,15 +39,16 @@
 .hamb__menu {
     position: absolute;
     top: 30px;
-    left: 40%;
+    left: 0%;
     width: 30%;
-    height: 150px;
+    // height: 150px;
     /* 100% если контент превышает высоту экрана утсройства*/
     background-color: #fff;
     font-size: 20px;
     font-weight: 700;
     padding: 26px;
     transform: translateX(-400%);
+    transition: 0.5s;
     z-index: 4;
 }
 
