@@ -1,8 +1,10 @@
 @media only screen and (max-width: 480px) {
     @import './hamburger';
     
+    
     .container {
         margin: 35px;
+        width: 990px;
     }
     
     .header {
@@ -72,18 +74,109 @@
         display: none;
     }
     .section {
-        padding: 0 50px;
+        padding: 0;
+
+        &__title {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 32px;
+        }
+
+        &_info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &_text {
+            text-align: center;
+        }
+
+        &__adv {
+            display: flex;
+            justify-content: center;
+            // flex-direction: column;
+            &-rooms,
+            &-cosmetics,
+            &-expert {
+                width: 30%;
+            }
+        }
+
+        &__prices {
+            height: 130px;
+        }
+
+        &_info-experts {
+            // flex-wrap: wrap;
+            flex-direction: column;        }
+            
+        &__figcap-exp {
+            font-size: 12px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
     }
 
-    .section__title {
-        text-align: center;
-        margin: 32px 0;
-        font-size: 32px;
+    .video-presentation {
+        width: 30%;
+        background: url(../img/img_video.png) 0 0 no-repeat;
+        background-size: cover;
+        // position: relative;
+        height: 200px;
+
+        &__title {
+            text-align: center;
+            top: 50%;
+            padding: 10px;
+        }
     }
 
-    .section_info {
-        display: flex;
-        flex-direction: column;
+    summary {
+        display: none;
+    }
+
+    .haircut,        
+    .cosmetology,
+    .manicure,        
+    .makeup,        
+    .lash,        
+    .massage {
+        display: none;
+    }
+
+    .section__expert {
+        padding-top: 30px;
+    }
+
+    // .expert__item_photo {
+    // }
+
+    .section__actions {
+        margin-right: 100px;
+    }
+
+    .gallery__slider {
+        margin: 0 50px 100px 50px;
+    }
+
+    .gallery-brands {
+        display: NONE;
+    }
+
+    footer {
+        width: 990px;
+        padding: 0;
+
+        & .navigation {
+            display: none;
+        }
+    }
+
+    .container_form {
+        padding: 25px 0;
+        margin: 0;
+        justify-content: space-around;
     }
 }
 
