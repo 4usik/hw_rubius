@@ -3,7 +3,7 @@
 /*  меню в мобильной версии при клике на "гамбургер"  */
 let menuBtn = document.querySelector('.hamb__menu-btn');
 let menu = document.querySelector('.hamb__menu');
-menuBtn.addEventListener('click', function(){
+    menuBtn.addEventListener('click', function(){
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
 });
@@ -51,6 +51,45 @@ $(document).ready(function(){
     });
 });
 
-/*  данные из формы  */
+/*  табы из секции услуги и цены  */
 
-/*  табф из секции услуги и цены  */
+$(document).ready(function(){
+    $('.navigation__item a').click(function(e)
+    {
+    var itemList = document.getElementsByClassName('section__list');
+        // divEl = document.getElementById(itemId);
+        // imgSrc = divEl.getElementsByTagName('img')[0].src;
+
+        // function() {
+            // if 
+        // }
+    console.log(itemList);
+    });
+});
+
+/*
+let menuBtn = document.querySelector('.hamb__menu-btn');
+let menu = document.querySelector('.hamb__menu');
+menuBtn.addEventListener('click', function(){
+menuBtn.classList.toggle('active');
+menu.classList.toggle('active');
+});
+
+/*  данные из формы  */
+$(document).ready(function(){
+    $('.btn_submit').click(function()
+    {
+        let userName = document.getElementById('user-name'),
+            userPhone = document.getElementById('user-phone');
+        // console.log(userName.value);
+        // console.log(userPhone.value);
+
+        let form = {
+                userName: userName.value,
+                phone: userPhone.value
+            };
+        console.log(form);
+    });
+});
+
+
