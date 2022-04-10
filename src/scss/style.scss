@@ -553,7 +553,7 @@ details[open] summary::after {
 }
 
 .expert {
-    width: 100%;
+    // width: 100%;
     margin: 0;
     
     &__item_photo {
@@ -613,6 +613,56 @@ details[open] summary::after {
     }
 }
 
+.modal {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    top: -1000px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 15px;
+}
+
+.modal_active {
+    position: fixed;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+}
+
+.modal__content {
+    width: 900px;
+    // max-width: 500px;
+    padding: 50px;
+    background: #fff;
+    position: relative;
+
+    img {
+        background-size: contain;
+        width: 100%;
+    }
+}
+
+.modal__close-btn {
+    background: #a0a0a0;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    // cursor: pointer;
+
+}
+
 .gallery__slider {
     display: flex;
     justify-content: space-between;
@@ -626,7 +676,11 @@ details[open] summary::after {
 .gallery-brands {
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.brands_img {
+    display: flex;
 }
 
 .pgn {
@@ -652,18 +706,18 @@ details[open] summary::after {
     background: url(../img/next.svg) center center no-repeat;
 }
 
-.gallery__slider-example {
-    max-width: 25%;
+.gallery__slider-item {
+    // max-width: 25%;
     cursor: pointer;
     padding: 30px 15px;
 }
 
-.gallery__slider-example:hover {
+.gallery__slider-item:hover {
     transform: scale(110%);
     transition: 0.3s;
 }
 
-.gallery__slider-example:hover:before {
+.gallery__slider-item:hover:before {
     content: url(../img/search.svg) 'Увеличить';
     /* как сделать выравнивание текста по центру??? */
     height: 48px;
@@ -676,7 +730,7 @@ details[open] summary::after {
     z-index: 3;
 }
 /*    
-.gallery__slider-example:hover:after {
+.gallery__slider-item:hover:after {
     content: 'Увеличить';
     height: 48px;
     width: 48px;
@@ -690,7 +744,7 @@ details[open] summary::after {
     z-index: 2;
 } /* так текст по центру, но как тогда сделать затемнение? */
 
-.gallery__slider-example:hover:after {
+.gallery__slider-item:hover:after {
     content: '';
     position: absolute;
     top: 0;

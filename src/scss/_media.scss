@@ -119,11 +119,11 @@
     }
 
     .video-presentation {
-        width: 30%;
+        width: 50%;
         background: url(../img/img_video.png) 0 0 no-repeat;
-        background-size: cover;
+        background-size: contain;
         // position: relative;
-        height: 200px;
+        height: 320px;
 
         &__title {
             text-align: center;
@@ -158,6 +158,7 @@
 
     .gallery__slider {
         margin: 0 50px 100px 50px;
+        
     }
 
     .gallery-brands {
@@ -177,6 +178,16 @@
         padding: 25px 0;
         margin: 0;
         justify-content: space-around;
+    }
+
+    .expert {
+        &__item_photo {
+            img {
+                width: 50%;
+                background-size: contain;
+            }
+            
+        }
     }
 }
 
