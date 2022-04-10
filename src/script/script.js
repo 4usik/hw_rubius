@@ -53,27 +53,13 @@ $(document).ready(function(){
 
 /*  табы из секции услуги и цены  */
 
-$(document).ready(function(){
-    $('.navigation__item a').click(function(e)
-    {
-    var itemList = document.getElementsByClassName('section__list');
-        // divEl = document.getElementById(itemId);
-        // imgSrc = divEl.getElementsByTagName('img')[0].src;
-
-        // function() {
-            // if 
-        // }
-    console.log(itemList);
-    });
-});
-
-/*
-let menuBtn = document.querySelector('.hamb__menu-btn');
-let menu = document.querySelector('.hamb__menu');
-menuBtn.addEventListener('click', function(){
-menuBtn.classList.toggle('active');
-menu.classList.toggle('active');
-});
+// $(document).ready(function(){
+    // $('.navigation__item a').click(function(e)
+    // {
+    // var itemList = document.getElementsByClassName('section__list');
+    // console.log(itemList);
+    // });
+// });
 
 /*  данные из формы  */
 $(document).ready(function(){
