@@ -316,6 +316,8 @@ details[open] summary::after {
     background: url(../img/img_video.png) 0 0 no-repeat;
     background-size: contain;
     position: relative;
+    height: 320px;
+    overflow: hidden;
 
     &__title {
         color: #fff;
