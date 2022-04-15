@@ -73,6 +73,17 @@
     .girl figure {
         display: none;
     }
+
+    .about-us__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-us_text {
+        text-align: center;
+    }
+
     .section {
         padding: 0;
 
@@ -80,16 +91,6 @@
             text-align: center;
             margin: 32px 0;
             font-size: 32px;
-        }
-
-        &_info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        &_text {
-            text-align: center;
         }
 
         &__adv {
@@ -107,15 +108,17 @@
             height: 130px;
         }
 
-        &_info-experts {
-            // flex-wrap: wrap;
-            flex-direction: column;        }
-            
-        &__figcap-exp {
-            font-size: 12px;
-            margin-top: 20px;
-            text-transform: uppercase;
-        }
+    }
+
+    .expert_exp {
+        font-size: 12px;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+
+    .experts {
+        // flex-wrap: wrap;
+        flex-direction: column;
     }
 
     .video-presentation {
@@ -145,12 +148,9 @@
         display: none;
     }
 
-    .section__expert {
+    .section_gray{
         padding-top: 30px;
     }
-
-    // .expert__item_photo {
-    // }
 
     .section__actions {
         margin-right: 100px;
@@ -180,14 +180,11 @@
         justify-content: space-around;
     }
 
-    .expert {
-        &__item_photo {
-            img {
-                width: 50%;
-                background-size: contain;
-            }
-            
-        }
+    .item__photo {
+        img {
+            width: 50%;
+            background-size: contain;
+        }    
     }
 }
 

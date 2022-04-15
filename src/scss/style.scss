@@ -185,7 +185,7 @@
         height: 510px;
         width: 524px;
         position: absolute;
-        right: -29px;
+        right: -38px;
         bottom: 50px;
         background: url(../img/girl.png) 0 0 no-repeat;
         z-index: 1;
@@ -207,32 +207,8 @@
     &_info {
         display: flex;
         flex-direction: wrap;
-        justify-content: space-between;
+        // justify-content: space-between;
         margin: 0;
-    }
-
-    &_text {
-        display: flex;
-        flex-direction: column;
-        float: left;
-        width: 50%;
-    }
-
-    &_text-middle {
-        display: float;
-        font-size: 20px;
-        font-weight: 400;
-        margin: 0;
-        line-height: 32px;
-    }
-
-    &_text-small {
-        display: float;
-        font-size: 16px;
-        font-weight: 400;
-        margin: 16px 0;
-        line-height: 26px;
-        width: 100%;
     }
 
     &__adv {
@@ -265,13 +241,59 @@
     &__figcap-adv {
         padding-top: 56px;
     }
-    
-    &_txt-m {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 22px;
-        margin: 0 0 20px;
+
+    &_gray {
+        background-color: #F8F6F7;
+        padding-top: 80px;
     }
+
+    &__actions {
+        position: absolute;
+        right: 0;
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        top: 0;
+    }
+
+    &_gray{
+        padding-top: 30px;
+    }
+    
+    &__actions {
+        margin-right: 100px;
+    }
+}
+
+.about-us__text {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 50%;
+}
+
+.text_l {
+    display: float;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 32px;
+}
+
+.text_m {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0 0 20px;
+}
+
+.text_s {
+    display: float;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 16px 0;
+    line-height: 26px;
+    width: 100%;
 }
 
 .section:not(:last-child) {
@@ -316,7 +338,7 @@ details[open] summary::after {
     background: url(../img/img_video.png) 0 0 no-repeat;
     background-size: contain;
     position: relative;
-    height: 320px;
+    height: 330px;
     overflow: hidden;
 
     &__title {
@@ -385,18 +407,23 @@ details[open] summary::after {
 
 /* ----- Popular -----*/
 
-.section {
-    &_info-works {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 0 0 -1px;
-        max-width: 1110px;
-    }
+.works_item {
+    margin: 0 30px 48px 0;
+    width: 30%;
+}
 
-    &__work {
-        margin: 0 30px 48px 0;
-        width: 30%;
-    }
+.title_pop {
+    font-size: 36px;
+}
+
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -1px;
+    max-width: 1110px;
+}
+
+.section {
 
     &__figcap {
         padding: 0;
@@ -534,33 +561,39 @@ details[open] summary::after {
 
 /* ----- Experts -----*/
 
-.section {
-    &__expert {
-        background-color: #F8F6F7;
-        padding-top: 80px;
-    }
-
-    &_info-experts {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 24px;
-        cursor: pointer;
-    }
-        
-    &__figcap-exp {
-        font-size: 12px;
-        margin-top: 20px;
-        text-transform: uppercase;
-    }
+.experts {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    cursor: pointer;
 }
 
 .expert {
     // width: 100%;
     margin: 0;
-    
-    &__item_photo {
-        position: relative;
 
+    &_exp {
+        font-size: 12px;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__name {
+        margin-bottom: 8px;
+    }
+
+    &__info {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 20px 0 80px;
+    }
+
+    &__photo {
+        position: relative;
         &:hover::before {
             content: 'Записаться к мастеру';
             color: #fff;
@@ -586,34 +619,11 @@ details[open] summary::after {
             z-index: 2;
         }
     }
-
-    &:not(:last-child) {
-        margin-right: 30px;
-    }
 }
 
-.expert__item_info {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 20px 0 80px;
-}
 
-.expert_name {
-    margin-bottom: 8px;
-}
 
 /* ----- gallery ----- */
-
-.section {
-    &__actions {
-    position: absolute;
-    right: 0;
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    top: 0;
-    }
-}
 
 .modal {
     position: absolute;
@@ -679,10 +689,6 @@ details[open] summary::after {
     text-align: center;
     display: flex;
     flex-direction: column;
-}
-
-.brands_img {
-    display: flex;
 }
 
 .pgn {
@@ -759,6 +765,12 @@ details[open] summary::after {
     z-index: 2;
 }
 
+.brands_img {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 .brand {
     height: 65px;
     width: 155px;
@@ -770,25 +782,25 @@ details[open] summary::after {
     margin-right: 50px;
 }*/
 
-.brand1 {
-    background: url(../img/wella.svg) center center no-repeat;
-}
+// .brand1 {
+    // background: url(../img/wella.svg) center center no-repeat;
+// }
 
-.brand2 {
-    background: url(../img/schwarzkopf.svg) center center no-repeat;
-}
+// .brand2 {
+    // background: url(../img/schwarzkopf.svg) center center no-repeat;
+// }
 
-.brand3 {
-    background: url(../img/tigi.svg) center center no-repeat;
-}
+// .brand3 {
+    // background: url(../img/tigi.svg) center center no-repeat;
+// }
 
-.brand4 {
-    background: url(../img/londa.svg) center center no-repeat;
-}
+// .brand4 {
+    // background: url(../img/londa.svg) center center no-repeat;
+// }
 
-.brand5 {
-    background: url(../img/nioxin.svg) center center no-repeat;
-}
+// .brand5 {
+    // background: url(../img/nioxin.svg) center center no-repeat;
+// }
 
 /* ----- Contacts -----*/
 
