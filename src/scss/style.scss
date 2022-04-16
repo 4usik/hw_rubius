@@ -247,6 +247,10 @@
         padding-top: 80px;
     }
 
+    &__prices {
+        padding-bottom: 120px;
+    }
+
     &__actions {
         position: absolute;
         right: 0;
@@ -254,10 +258,6 @@
         display: flex;
         margin: 0;
         top: 0;
-    }
-
-    &_gray{
-        padding-top: 30px;
     }
     
     &__actions {
@@ -297,7 +297,7 @@
 }
 
 .section:not(:last-child) {
-    margin-bottom: 100px;
+    margin-bottom: 110px;
 }
 
 .spoiler {
@@ -488,75 +488,36 @@ details[open] summary::after {
     }
 }
 
-.haircut {
-    z-index: 2;
-
-    &_info {
-        padding: 0;
-        margin: 0;
+.tabs {
+    &__links {
+        .active {
+            text-decoration: underline;
+            color: $green;
+        }
+    }
+    &__item {
+        display: none;
+        &.active {
+            display: block;
+        }
     }
 }
 
-.cosmetology {
-    background-color: #299;
-    z-index: 1;
-
-    &_info {
-        padding: 0;
-        margin: 0;
-    }
+.tabs__links {
+    list-style-type: none;
+    font-size: 17px;
+    display: flex;
+    padding: 0;
 }
 
-.manicure {
-    background-color: #356;
-    z-index: 1;
-
-    &_info {
-        padding: 0;
-        margin: 0;
-    }
+.tabs__links li {
+    margin: 0 28px 50px 0;
 }
 
-.makeup {
-    background-color: #423;
-    z-index: 1;
-
-    &_info {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-.lash {
-    background-color: #891;
-    z-index: 1;
-
-    &_info {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-.massage {
-    background-color: #921;
-    z-index: 1;
-
-    &_info {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-.navigation-prices {
-    font-size: 14px;
-    margin-bottom: 50px;
-}
-
-.navigation__item:active,
-.navigation__item:focus-within {
-    text-decoration: underline;
-    color: $green;
-}
+// .tabs {
+    // font-size: 14px;
+    // margin-bottom: 50px;
+// }
 
 
 /* ----- Experts -----*/
