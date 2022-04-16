@@ -10,8 +10,10 @@ let menu = document.querySelector('.hamb__menu');
 /*  закрытие мобильного меню  */
 $('.hamb__menu').mouseup(function(e) {
     let mobilMenu = $(".hamb__menu-btn");
+    let menuBtn = $(".hamb__menu-btn");
     if (!mobilMenu.is(e.target) && mobilMenu.has(e.target).length ===0) {
         $(this).removeClass('active');
+        menuBtn.removeClass('active');
     }
 });
 
