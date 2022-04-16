@@ -62,20 +62,23 @@ $(document).ready(function(){
 // });
 
 /*  данные из формы  */
-$(document).ready(function(){
-    $('.btn_submit').click(function()
-    {
-        let userName = document.getElementById('user-name'),
-            userPhone = document.getElementById('user-phone');
-        // console.log(userName.value);
-        // console.log(userPhone.value);
 
-        let form = {
-                userName: userName.value,
-                phone: userPhone.value
-            };
-        console.log(form);
-    });
-});
+function serializeForm(formNode) {
+    const { elements } = formNode
+    const data = Array.from(elements)
+    .filter((item) => !!item.name)
+    .map((element) => {
+        const { name, value } = element
+        return({ name, value})
+    })
+    console.log(data)
+}
 
+function handleFormSubmit (event) {
+    event.preventDefault(),
+    serializeForm(applicantForm)
+};
+
+const applicantForm = document.getElementById('form')
+applicantForm.addEventListener('submit', handleFormSubmit)
 

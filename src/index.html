@@ -480,14 +480,14 @@
                             <li><a class="social_yt" target="_blank" href="https://www.youtube.com/"><img src="img/youtube.svg" alt="youtube"></a></li>
                         </ul>
                     </div>
-                        <form class="form" action="#">
+                        <form id="form" class="form" action="#">
                             <p class="section__item-title ">Быстрая запись</p>
                             <div class="section__item-descr">
                                 <p>Наш менеджер перезвонит в течение нескольких минут, уточнит подробности и согласует время.</p>
-                                <p><input id="user-name" type="text" name="username" placeholder="Ваше имя" required></p>
-                                <p><input id="user-phone" type="tel" placeholder="+7 (___) ___-__-__" required></p>
+                                <p><input id="user-name" type="text" name="username" placeholder="Ваше имя" required autofocus></p>
+                                <p><input id="user-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></p>
                             </div>
-                            <button class="btn btn_submit" type="button">Записаться</button>
+                            <button class="btn btn_submit" type="submit">Записаться</button>
                             <p>
                                 <span>Нажимая на кнопку вы соглашаетесь с </span>
                                 <a class="section_contacts-href" href="#">обработкой персональных данных</a>
