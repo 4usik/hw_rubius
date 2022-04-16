@@ -119,7 +119,6 @@ class TabsManager {
         
         for (let i = 0; i < links.length; i++) {
             const tab = new TabItem(links[i], contents[i]);
-            console.log(tab);
             this.tabs.push(tab);
 
             tab.onClick(() => this.activateTab(tab));
