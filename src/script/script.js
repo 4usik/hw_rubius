@@ -4,9 +4,17 @@
 let menuBtn = document.querySelector('.hamb__menu-btn');
 let menu = document.querySelector('.hamb__menu');
     menuBtn.addEventListener('click', function(){
-    menuBtn.classList.toggle('active');
-    menu.classList.toggle('active');
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+/*  закрытие мобильного меню  */
+$('.hamb__menu').mouseup(function(e) {
+    let mobilMenu = $(".hamb__menu-btn");
+    if (!mobilMenu.is(e.target) && mobilMenu.has(e.target).length ===0) {
+        $(this).removeClass('active');
+    }
 });
+
 
 /*  слайдер с кнопками  */
 $(document).ready(function(){
