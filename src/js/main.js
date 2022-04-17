@@ -1,5 +1,8 @@
 "use strict"
 
+import $ from 'jquery';
+import { OrderForm } from './forms/order-form';
+
 /*  меню в мобильной версии при клике на "гамбургер"  */
 let menuBtn = document.querySelector('.hamb__menu-btn');
 let menu = document.querySelector('.hamb__menu');
@@ -19,15 +22,21 @@ $('.hamb__menu').mouseup(function(e) {
 
 
 /*  слайдер с кнопками  */
-$(document).ready(function(){
+
+function init(){
     $('.gallery__slider').slick({
         slidesToShow: 4,
         prevArrow: '.slider-prev',
         nextArrow: '.slider-next'
     });
-});
+    new OrderForm();
+}
 
-/*  Модальное окно  */
+$(document).ready(init);
+
+
+
+/*  Модальное окно в галерее  */
 /*  открытие модального окна  */
 $(function () {
     $('.gallery__slider-item').click(function () {
@@ -137,5 +146,23 @@ window.onload = function() {
     const tabsElem = document.getElementById('myTabs');
     new TabsManager(tabsElem);
 }
+
+
+/* Модальное окно для расширенной формы */
+
+$(function () {
+    $('.ext_form').click(function () {
+        $('.form_ext').addClass('form_active');
+    });
+
+    $('.expert__item').click(function () {
+        $('.form_ext').addClass('form_active');
+    });
+
+    $('.close-btn').click(function() {
+        $('.form_ext').removeClass('form_active');
+    });
+});
+
 
 

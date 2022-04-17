@@ -8,8 +8,13 @@ module.exports = {
             {
                 test: /\.(js)$/,
                 loader: 'babel-loader',
-                
+
             }
         ]
-    }
+    },
+    externals: {
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+    },
 };

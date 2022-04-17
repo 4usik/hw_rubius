@@ -834,6 +834,62 @@ input {
 }
 */
 
+.form_ext {
+    font-size: 18px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, .8);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 15px;
+}
+
+.form_active {
+    position: fixed;
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+}
+
+.form-control {
+    margin: 20px 0;
+
+    label, option {
+        display: block;
+        margin: 12px 0;
+    }
+
+    input {
+        // margin-top: 12px;
+    }
+}
+
+.form_bgd {
+    width: 900px;
+    padding: 50px;
+    background: #fff;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#btn-submit {
+    // transform: translateX(100%);
+}
+
+
 
 /*  ----- footer -----  */
 

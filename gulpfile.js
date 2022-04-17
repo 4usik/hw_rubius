@@ -45,8 +45,8 @@ function buildJs() {
     return src('src/js/index.js')
       .pipe(webpackStream(require('./webpack.config')))
       .pipe(rename('main.min.js'))
-      .pipe(dest('src/js'))
-      .pipe(dest('dist/js'))
+      .pipe(dest('src'))
+      .pipe(dest('dist'))
       .pipe(browserSync.stream());
   }
 
@@ -55,7 +55,7 @@ function cleanDist() {
 }
 
 function serve() {
-    watch(['src/js/**/*.js', '!src/js/**/*.min.js'], buildJs);
+    watch(['src/js/**/*.js', '!src/**/*.min.js'], buildJs);
     watch('src/scss/**/*.scss', buildSass);
     watch('src/**/*.html', buildHtml);
 }
