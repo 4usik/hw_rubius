@@ -6,9 +6,11 @@ import ApiService from '../services/api-service';
         this.formEl = document.getElementById('orderForm');
         this.mastersSelect = this.formEl.elements.masterId;
         this.servicesSelect = this.formEl.elements.serviceId;
-
+    
         this._init();
         this._bindEvents();
+        
+
     }
 
     _init() {
@@ -46,11 +48,11 @@ import ApiService from '../services/api-service';
     }
 
     async createOrder(){
-        let data = new FormData(this.formEl);
-        var object = {};
-        data.forEach(function(value, key){
-            object[key] = value;
+        let formData = new FormData(this.formEl);
+        var orderData = {};
+        formData.forEach((value, key) => {
+            orderData[key] = value;
         });
-        return await ApiService.createOrder(object);
+        return await ApiService.createOrder(orderData);
     }
 }

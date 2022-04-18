@@ -632,6 +632,10 @@ details[open] summary::after {
     position: absolute;
     right: 5px;
     top: 5px;
+    height: 30px;
+    width: 30px;
+    background: url(../img/close.png) 0 0 no-repeat;
+    background-size: contain;
     // cursor: pointer;
 
 }
@@ -881,8 +885,12 @@ input {
 
 .close-btn {
     position: absolute;
-    right: 5px;
-    top: 5px;
+    right: 15px;
+    top: 15px;
+    height: 30px;
+    width: 30px;
+    background: url(../img/close.png) 0 0 no-repeat;
+    background-size: contain;
 }
 
 #btn-submit {
