@@ -9,8 +9,6 @@ import ApiService from '../services/api-service';
     
         this._init();
         this._bindEvents();
-        
-
     }
 
     _init() {
@@ -21,9 +19,33 @@ import ApiService from '../services/api-service';
     _bindEvents() {
         this.formEl.addEventListener('submit', event => {
             event.preventDefault();
+
+            var errors = orderForm.querySelectorAll('.error');
+                for (var i = 0; i < errors.length; i++) {
+                    errors[i].remove();
+                };
+
+            function validate () {
+
+                let fields = document.querySelectorAll('.field');
+                
+
+                for (var i = 0; i < fields.length; i++) {
+                    if (!fields[i].value) {
+                        fields[i].classList.add('highlight');
+                        var error = document.createElement('div');
+                        error.className='error';
+                        error.style.color = 'red';
+                        error.innerHTML = 'Необходимо заполнить поле';
+                        fields[i].parentElement.insertBefore(error, fields[i]);
+                    }
+                }
+                
+            }
  
             let response = this.createOrder();
-            console.log(response);
+            // console.log(response);
+            validate();
         });
     }
 
@@ -55,4 +77,5 @@ import ApiService from '../services/api-service';
         });
         return await ApiService.createOrder(orderData);
     }
+
 }
