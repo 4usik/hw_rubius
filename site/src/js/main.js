@@ -35,7 +35,6 @@ function init(){
 $(document).ready(init);
 
 
-
 /*  Модальное окно в галерее  */
 /*  открытие модального окна  */
 $(function () {
@@ -47,6 +46,8 @@ $(function () {
         $('.modal').removeClass('modal_active');
     });
 });
+
+
 
 /*  закрытие модального окна по клику вне области контента  */
 $('.modal').mouseup(function(e) {
@@ -146,23 +147,6 @@ window.onload = function() {
     const tabsElem = document.getElementById('myTabs');
     new TabsManager(tabsElem);
 }
-
-
-/* Модальное окно для расширенной формы */
-
-$(function () {
-    $('.ext_form').click(function () {
-        $('.form_ext').addClass('form_active');
-    });
-
-    $('.expert__item').click(function () {
-        $('.form_ext').addClass('form_active');
-    });
-
-    $('.close-btn').click(function() {
-        $('.form_ext').removeClass('form_active');
-    });
-});
 
 
 
