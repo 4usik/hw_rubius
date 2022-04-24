@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=H, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Привет</h1>
+        <div class="table">
+            <table>
+                <tr class="">
+                    <td>ФИО</td>
+                    <td>телефон</td>
+                    <td>дата</td>
+                    <td>мастер</td>
+                    <td>услуга</td>
+                    <td>статус</td>
+                </tr>
+            
+                <tr>
+                    <td id="td-btn">
+                        <button class="btn">Добавить запись</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    
+    <div>
+        <div class="container container_form">
+            <div class="">
+                <form id="" class="">
+                    <div class="form-control">
+                        <label>Имя:</label>
+                        <input class="field" type="text" name="name" >
+                    </div>
+                    <div class="form-control">
+                        <label>Номер телефона:</label>
+                        <input id="phone" class="field" type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" >
+                    </div>
+                    <div class="form-control">
+                        <label>Выберите мастера:</label>
+                        <select name="masterId">
+                            <option value="">Не выбран</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label>Выберите услугу:</label>
+                        <select name="serviceId">
+                            <option value="">Не выбран</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label>Дата визита:</label>
+                        <input type="date" name="visitDate">
+                    </div>
+                    <div>
+                        <button id="btn-submit" type="button" class="btn">Записать</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./main.min.js"></script>
+</body>
+</html>

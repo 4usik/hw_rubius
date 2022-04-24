@@ -1,3 +1,5 @@
+import { API_PATH } from '../constants';
+
 export class HttpService {
 
     constructor(baseApiPath = '') {
@@ -18,6 +20,18 @@ export class HttpService {
             headers: {
                 'Content-Type': 'application/json'
             }
+        });
+
+        return response;
+    }
+
+    async post(path = '', body) {
+        const response = await fetch(`${this.baseApi}/${path}`, {
+            method: 'POST',
+            body,
+            // headers: {
+            //     'Content-Type': 'multipart/form-data'
+            // }
         });
 
         return response;

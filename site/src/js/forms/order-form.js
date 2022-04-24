@@ -77,7 +77,6 @@ import ApiService from '../services/api-service';
         
     }
 
-
     async _validationOrder() {
         const response = await this._createOrder();
         if (response.ok) {
@@ -110,7 +109,6 @@ import ApiService from '../services/api-service';
             }
         }
     }
-    
 
 }
 
