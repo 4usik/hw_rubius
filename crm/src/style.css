@@ -1,0 +1,113 @@
+h1,
+p {
+    font-family: Lato;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.col {
+    flex: 25%;
+    padding: 0 10px;
+}
+
+.master__position {
+    font-size: 12px;
+    margin: 0;
+}
+
+.master__position + .master__remove {
+    margin-top: 10px;
+}
+
+.master__photo {
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.master__photo img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.master__name {
+    margin: 0 0 5px 0;
+}
+
+.field {
+    text-transform: capitalize;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.table {
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.table tr {
+    height: 20px;
+    
+}
+
+.col td {
+    padding: 3px 9px;
+    min-width: 150px;
+}
+
+#td-btn {
+    padding: 30px 0;
+}
+
+.search {
+    margin-left: 10px;
+    margin: 32px 0;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.add-form label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    max-width: 320px;
+}
+
+.add {
+    margin-top: 20px;
+    width: 90px;
+}

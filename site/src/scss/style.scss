@@ -934,32 +934,7 @@ footer {
 }
 
 
-.field {
-    text-transform: capitalize;
-}
 
-.hidden {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-.table {
-    margin: 50px 0;
-    text-transform: capitalize;
-
-    tr {
-        height: 20px;
-        td {
-            width: 200px;
-        }
-    }
-}
-#td-btn {
-    padding: 30px 0;
-}
 
 
 @import './media';

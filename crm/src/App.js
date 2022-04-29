@@ -1,77 +1,62 @@
-/*import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import '../src/style.css';
+import { useEffect } from 'react';
 
-import { DatePicker } from 'antd';
+import { MastersPage } from './pages/masters';
+import { LoginPage } from './pages/login';
+import { OrdersPage } from './pages/orders';
+import { useAuth } from './contexts/AuthContext';
+import { PrivateRoute } from './components/PrivateRoute';
+import { CustomersApi } from './api';
 
-ReactDOM.render(<DatePicker />, mountNode);
-import 'antd/dist/antd.css';
+// import { Master } from './components/Master';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App; */
-
-import React, { useState, useEffect } from 'react';
-import './style.scss';
-
-import MastersApi from './api/masters-api';
-import { Master } from './components/Master';
-import { MasterForm } from './components/MasterForm';
+// import { OrderForm } from './pages/orders/components/OrderForm';
+// import { OrdersList } from './pages/orders/components/OrdersList';
 
 export default function App() {
-  const [masters, setMasters] = useState([]);
-  const [value, setValue] = useState('');
+  const  { isAuth, logout } = useAuth();
 
-  useEffect(() => {
-    MastersApi.getMasters(value).then(setMasters);
-  }, [value]);
-
-  function removeMaster(masterId) {
-    const filteredMasters = masters.filter((master) => master.id !== masterId);
-    setMasters(filteredMasters);
-  }
-
+  // useEffect(() => {
+  //   CustomersApi.getCustomers().then(list => console.log(list))
+  // }, []);
+  
   return (
-    <div className="container">
-      <input
-        type="text"
-        value={value}
-        onChange={event => setValue(event.target.value)}
-        placeholder="Введите имя"
-        />
-        <br />
-        <br />
+  <div className='container'>
 
-        <MasterForm/>
+    {isAuth &&  <nav>
+    <ul>
+        <li><Link to="/">Заявки</Link></li>
+        {/* <li><Link to="/login">Login</Link></li> */}
+        <li><Link to="/masters">Мастера</Link></li>
+      </ul>
+      <button onClick={logout}>Выйти</button>
+    </nav>}
 
-        {masters?.length === 0 && <p>Нет данных</p>}
+    <Routes>
+      {/* <PrivateRoute path="/" element={<OrdersPage />} /> */}
+      <Route path="/" element={
+        <PrivateRoute>
+          <OrdersPage />
+        </PrivateRoute>
+      } />
+      <Route path="/masters" element={
+        <PrivateRoute>
+          <MastersPage />
+        </PrivateRoute>
+      } />
+      <Route path="/login" element={<LoginPage />} />
+    </Routes>
 
-        <div className="row">
-          {masters?.map(item => (
-            <div key={item.id} className="col">
-              <Master data={item} onRemove={() => removeMaster(item/id)} />
-              </div>
-          ))}
-        </div>
-    </div>
+    
+
+    {/* <OrdersList />
+    <OrderForm /> */}
+    
+  </div>
   );
 }
+
+
 
