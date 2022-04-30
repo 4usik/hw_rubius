@@ -22,6 +22,14 @@ export class HttpService {
         return this._handleResponse(response);
     }
 
+    async delete(id){
+        const response = await fetch(`${this.baseApi}/${id}`, {
+            headers: this.baseHeaders,
+            method: 'DELETE'
+        });
+        return this._handleResponse(response);
+    }
+
     async post(path = '', body) {
         const stringifiedData = JSON.stringify(body);
 

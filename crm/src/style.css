@@ -91,7 +91,7 @@ html {
 
 .search {
     margin-left: 10px;
-    margin: 32px 0;
+    margin: 10px 0;
 }
 
 .add-form {
@@ -110,4 +110,9 @@ html {
 .add {
     margin-top: 20px;
     width: 90px;
+}
+
+.search-list {
+    display: flex;
+    flex-direction: column;
 }

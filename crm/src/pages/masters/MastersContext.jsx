@@ -7,7 +7,7 @@ export const MastersContext = createContext(null); /* Передает знач�
 export function MastersProvider({ children }) {
     /* Возвращает разметку MastersContext, передавая во все вложенные компоненты value, по сути createContext(null -> value) */
     const [masters, setMasters] = useState([]); /*  */
-    const [search, setSearch] = useState(''); 
+    const [search, setSearch] = useState('');
 
     useEffect(() => { /* Выводит элементы, которые соответсвуют полученному значению search */
         MastersApi.getMasters(search).then(setMasters); /* получает данные мастеров с сервера

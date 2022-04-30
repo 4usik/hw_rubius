@@ -7,13 +7,17 @@ class OrdersApi extends HttpService {
     }
 
  /* Возвращает список заявок */
-    getOrders() {
-        return this.get();
+    getOrders(search = '', from='', to='', status='') {
+        return this.get('?' +  `search=${search}` + `&from=${from}` + `&to=${to}` + `&status=${status}`);
     }
 
  /* Отправляет заявку */
     createOrder(orderData) {
-        return this.post('orders', orderData);
+        return this.post('', orderData);
+    }
+
+    removeOrder(id){
+        return this.delete(id);
     }
 
 //  /* Редактирует заявку */

@@ -1,5 +1,6 @@
 import { useMasters } from "../MastersContext";
 import { Master } from "./Master";
+// import { BuildMastersSelect } from "./BuildMastersSelect";
 
 export function MastersList() {
     const { masters } = useMasters();
@@ -14,6 +15,7 @@ export function MastersList() {
             {masters?.map(item => (
                 <div key={item.id} className="col">
                     <Master data={item}/>
+                    {/* <BuildMastersSelect/> */}
                 </div>
             ))}
         </div>
