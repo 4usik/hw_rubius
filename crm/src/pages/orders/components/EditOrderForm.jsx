@@ -1,51 +1,39 @@
 import React, { useState } from "react";
 import { useOrders } from "../OrdersContext";
-import { BuildServiceSelect, BuildMastersSelect } from "./Order";
+import { BuildServiceSelect } from "./Order";
+import { BuildMastersSelect } from "./Order";
 import OrdersApi from "../../../api/orders-api";
 import { useInput } from '../../../hooks';
 
-export function OrderForm() {
-  const firstName = useInput([]);
-  const surName = useInput([]);
-  const phone = useInput('');
-  const [masterId, setMasterId] = useState('');
-  const [serviceId, setServiceId] = useState('');
-  const visitDate = useInput('');
+export function EditOrderForm() {
+  const name = useInput(name.value);
+  const phone = useInput(phone.value);
+  const visitDate = useInput(visitDate.value);
 
   const { masters, services } = useOrders();
   const { reloadOrderList } = useOrders();
 
   function handleForm(event) {
     event.preventDefault();
-    var ord = {
-      name: [surName.value, firstName.value],
-      phone: phone.value,
-      masterId: masterId,
-      serviceId: serviceId,
-      visitDate: visitDate.value
-    }
-    OrdersApi.createOrder(ord).then(reloadOrderList());
+    
+    // OrdersApi.createOrder(ord).then(reloadOrderList());
   }
 
     return (
       
     <div className='container'>  
       <div class="">
-        <form className="add-form" onSubmit={handleForm}>
+        <form className="change-form" onSubmit={handleForm}>
 
         <label>
             <span>Фамилия:</span>
-            <input {...surName} required/>
-        </label>
+            <input {...name} />
+          </label>
 
-        <label>
-            <span>Имя:</span>
-            <input {...firstName} required/>
-        </label>
 
           <label>
             <span>Номер телефона:</span>
-            <input {...phone} id="phone" class="field" type="tel" name="phone" inputmode="tel" required placeholder="+7 (___) ___-__-__" />
+            <input {...phone} id="phone" class="field" type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" />
            
           </label>
 
@@ -78,7 +66,7 @@ export function OrderForm() {
 
           <label>
             <span>Дата визита:</span>
-            <input type="datetime-local" {...visitDate} required />
+            <input type="datetime-local" {...visitDate} />
           </label>
           
           <div>

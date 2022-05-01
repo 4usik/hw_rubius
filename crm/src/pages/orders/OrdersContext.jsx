@@ -31,11 +31,59 @@ export function OrdersProvider({ children }) {
         OrdersApi.removeOrder(orderId);
     }
 
+    function HandleChange(orderId) {
+        // OrdersApi.handleChange(orderId);
+        
+        const [editing, setEditing] = useState(false);
+        const ord = {
+            id: '',
+            customer: {
+                firstName: '',
+                surName: '',
+                phone: ''
+            },
+            master: {
+                firstName: '',
+                surName: ''
+            },
+            service: {
+                name: '',
+                id: ''
+            },
+            visitDate: ''}
+        console.log(orderId);
+        const [currentOrderId, setCurrentOrderId] = useState(ord);
+        const updateOrder = (orderId, updatedOrder) => {
+            setEditing(false);
+            setOrders(orders.map(order => order.id === orderId ? updatedOrder : order))
+        }
+
+        const editRow = order => {
+            setEditing(true);
+            setCurrentOrderId({
+                id: order.id,
+                customer: {
+                firstName: order.customer.firstName,
+                surName: order.customer.surName,
+                phone: order.customer.phone
+            },
+            master: {
+                firstName: order.master.firstName,
+                surName: order.master.fsurName
+            },
+            service: {
+                name: order.service.name,
+                id: order.service.id
+            },
+            visitDate: order.visitDate})
+        }
+    }
+
     function reloadOrderList(){
         OrdersApi.getOrders(search, from, to, status).then(setOrders);
     }
     
-    return <OrdersContext.Provider  value={{ reloadOrderList, orders, removeOrder, search, setSearch, from, setFrom, to, setTo, status, setStatus, masters, setMasters, services, setServices }}>
+    return <OrdersContext.Provider  value={{ reloadOrderList, HandleChange, orders, removeOrder, search, setSearch, from, setFrom, to, setTo, status, setStatus, masters, setMasters, services, setServices }}>
         {children} 
     </OrdersContext.Provider>
 }
