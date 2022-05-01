@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import { useOrders } from "../OrdersContext";
 import { Order } from "./Order";
 import OrdersApi from "../../../api/orders-api";
+import { OrderForm } from "./OrderForm";
 
 export function OrdersList() {
-  const { orders } = useOrders();
+  const { orders, resetStateOfOrderFields, setEditing } = useOrders();
 
     return (
     <div className='container'>
@@ -38,7 +39,10 @@ export function OrdersList() {
           
           <tr>
             <td id="td-btn">
-              <button className="btn">Добавить запись</button>
+              <button className="btn" onClick = {() => {
+                resetStateOfOrderFields();
+                setEditing(false);
+                }}>Добавить запись</button>
             </td>
           </tr>
         </table>

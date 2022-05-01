@@ -20,8 +20,8 @@ class OrdersApi extends HttpService {
         return this.delete(id);
     }
 
-    patchOrder(id) {
-        return this.patch(id);
+    patchOrder(id, orderData) {
+        return this.patch(id, orderData);
     }
 
 //  /* Редактирует заявку */

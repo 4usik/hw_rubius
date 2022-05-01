@@ -1,80 +1,56 @@
-import React, { useState } from "react";
-import { useOrders } from "../OrdersContext";
-import { BuildServiceSelect } from "./Order";
-import { BuildMastersSelect } from "./Order";
-import OrdersApi from "../../../api/orders-api";
-import { useInput } from '../../../hooks';
+// import React, { useState, useEffect } from "react";
+// import { useOrders } from "../OrdersContext";
+// import { BuildServiceSelect } from "./Order";
+// import { BuildMastersSelect } from "./Order";
+// import { useInput } from '../../../hooks';
+// import OrdersApi from "../../../api/orders-api";
 
-export function EditOrderForm() {
-  const name = useInput(name.value);
-  const phone = useInput(phone.value);
-  const visitDate = useInput(visitDate.value);
+// export function EditOrderForm(props) { /** возвращает разметку формы с заполненными полями */
+//   const [order, setOrder] = useState(props.currentOrder);
 
-  const { masters, services } = useOrders();
-  const { reloadOrderList } = useOrders();
+//   const handleInputChange = event => {
+//     const { name, phone, masterId, serviceId, visitDate,} = event.target;
+//      setOrder ({
+//        name: [surName.value, firstName.value],
+//        phone: phone.value,
+//        masterId: masterId,
+//        serviceId: serviceId,
+//        visitDate: visitDate.value});
+//   }
 
-  function handleForm(event) {
-    event.preventDefault();
+
+  
+
+//   const  handleSubmit = event => { /** сохраняет изменения в заявке */
+//     event.preventDefault();
+//     if (!order.visitDate || !order.customer.firstName || !order.customer.surName || !order.master || !order.service}
     
-    // OrdersApi.createOrder(ord).then(reloadOrderList());
-  }
+//     // OrdersApi.createOrder(ord).then(reloadOrderList());
 
-    return (
-      
-    <div className='container'>  
-      <div class="">
-        <form className="change-form" onSubmit={handleForm}>
+    
+//   }
 
-        <label>
-            <span>Фамилия:</span>
-            <input {...name} />
-          </label>
+//   return (
+//   <div className='container'>  
+//       <div class="">
+//         <form className="change-form" onSubmit={handleForm}>
+
+//           <label>
+//             <span>Фамилия:</span>
+//             <input type="text" name="surName" />
+//           </label>
 
 
-          <label>
-            <span>Номер телефона:</span>
-            <input {...phone} id="phone" class="field" type="tel" name="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" />
-           
-          </label>
-
-          <label>
-            <span>Выберите мастера:</span>
-            <select name="master" onChange={e => setMasterId(e.target.value)}>
-              <option>Не выбран</option>
-              <>
-                {masters.map(item => (
-                  <BuildMastersSelect data={item}/>
-                ))}
-              </>
-              
-              
-            </select>
-          </label>
-
-          <label>
-            <span>Выберите услугу:</span>
-            <select name="service" onChange={e => setServiceId(e.target.value)}>
-              <option>Не указана</option>
-              {services.map(item => (
-                    <BuildServiceSelect data={item}/>
-              ))}
-              
-              
-
-            </select>
-          </label>
-
-          <label>
-            <span>Дата визита:</span>
-            <input type="datetime-local" {...visitDate} />
-          </label>
           
-          <div>
-            <button id="btn-submit" className="add">Записать</button>
-          </div>
+//           <div>
+//             <button id="btn-submit" className="add">Записать</button>
+//             <button id="close-btn" className="close">Отменить</button>
+//           </div>
                       
-        </form>
-      </div>
-    </div>
-    );
-  }
+//         </form>
+//       </div>
+//     </div>
+//   );
+
+// }
+  

@@ -12,9 +12,22 @@ export function OrdersProvider({ children }) {
     const [search, setSearch] = useState('');
     const [from, setFrom] = useState('');
     const [to, setTo] = useState('');
-    const [status, setStatus] = useState('');
+    const [statusesOfOrders, setStatusesOfOrderss] = useState(['Opened','Closed']);
+    const [status, setStatus] = useState("");
     const [masters, setMasters] = useState([]);
     const [services, setServices] = useState([]);
+    
+    const [editing, setEditing] = useState(false);
+    const [customerNumber, setCustomerNubmer] = useState("");
+    const [customerFirstName, setCustomerFirstName] = useState("");
+    const [customerSurName, setCustomerSurName] = useState("");
+    const [orderVisitDate, setOrderVisitDate] = useState("");
+    const [orderMasterId, setOrderMasterId] = useState("");
+    const [orderServiceId, setOrderServiceId] = useState("");
+
+
+    let initOrder = {customer: {firstName: "", surName : "", phone : "", id : ""}, visitDate: "", master: {surName: "", firstName: "", id:""}, service: {name: "", id: ""}, status: ""}
+    let [currentOrder, setCurrentOrder] = useState(initOrder);
     
     useEffect(() => { /* Выводит элементы, которые соответсвуют полученному значению search */
         OrdersApi.getOrders(search, from, to, status).then(setOrders); /* получает данные о заявках с сервера
@@ -31,63 +44,45 @@ export function OrdersProvider({ children }) {
         OrdersApi.removeOrder(orderId);
     }
 
-    function HandleChange(orderId) {
-        // OrdersApi.handleChange(orderId);
-        
-        const [editing, setEditing] = useState(false);
-        const ord = {
-            id: '',
-            customer: {
-                firstName: '',
-                surName: '',
-                phone: ''
-            },
-            master: {
-                firstName: '',
-                surName: ''
-            },
-            service: {
-                name: '',
-                id: ''
-            },
-            visitDate: ''}
-        console.log(orderId);
-        const [currentOrderId, setCurrentOrderId] = useState(ord);
-        const updateOrder = (orderId, updatedOrder) => {
-            setEditing(false);
-            setOrders(orders.map(order => order.id === orderId ? updatedOrder : order))
-        }
 
-        const editRow = order => {
-            setEditing(true);
-            setCurrentOrderId({
-                id: order.id,
-                customer: {
-                firstName: order.customer.firstName,
-                surName: order.customer.surName,
-                phone: order.customer.phone
-            },
-            master: {
-                firstName: order.master.firstName,
-                surName: order.master.fsurName
-            },
-            service: {
-                name: order.service.name,
-                id: order.service.id
-            },
-            visitDate: order.visitDate})
-        }
+
+    function handleChange(currentOrder) {
+        setEditing(true);
+
+        setCurrentOrder(initOrder);
+        setCurrentOrder(currentOrder);
+        setCustomerNubmer(currentOrder.customer.phone);
+        setCustomerFirstName(currentOrder.customer.firstName);
+        setCustomerSurName(currentOrder.customer.surName);
+        setOrderVisitDate(new Date(Date.parse(currentOrder.visitDate)).toISOString().split('Z')[0]);
+        setOrderMasterId(currentOrder.master.id);
+        setOrderServiceId(currentOrder.service.id);
+    }
+
+    function resetStateOfOrderFields(){
+        setCurrentOrder(initOrder);
+        setCurrentOrder('');
+        setCurrentOrder('');
+        setCustomerNubmer('');
+        setCustomerFirstName('');
+        setCustomerSurName('');
+        setOrderVisitDate('');
+        setOrderMasterId('');
+        setOrderServiceId('');
     }
 
     function reloadOrderList(){
         OrdersApi.getOrders(search, from, to, status).then(setOrders);
     }
     
-    return <OrdersContext.Provider  value={{ reloadOrderList, HandleChange, orders, removeOrder, search, setSearch, from, setFrom, to, setTo, status, setStatus, masters, setMasters, services, setServices }}>
+    return <OrdersContext.Provider  value={{ reloadOrderList, handleChange, orders, removeOrder, currentOrder, setCurrentOrder,
+     search, setSearch, from, setFrom, to, setTo, 
+     status, setStatus, masters, setMasters, services, setServices,
+     customerNumber, setCustomerNubmer, customerFirstName, setCustomerFirstName, customerSurName, setCustomerSurName,
+     orderVisitDate, setOrderVisitDate, orderMasterId, setOrderMasterId, orderServiceId, setOrderServiceId, editing, setEditing
+     , resetStateOfOrderFields, statusesOfOrders }}>
         {children} 
     </OrdersContext.Provider>
 }
 
-export const useOrders = () => useContext(OrdersContext);/* Передает значения search, setSearch из OrdersFilter в OrdersContext;
-orders;
-removeOrder из Order.jsx */
+export const useOrders = () => useContext(OrdersContext);/* Передает значения search, setSearch из OrdersFilter в OrdersContext; orders; removeOrder из Order.jsx */
