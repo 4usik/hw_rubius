@@ -44,8 +44,6 @@ export function OrdersProvider({ children }) {
         OrdersApi.removeOrder(orderId);
     }
 
-
-
     function handleChange(currentOrder) {
         setEditing(true);
 
