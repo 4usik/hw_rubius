@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
 h1,
 p {
-    font-family: Lato;
+    font-family: Montserrat;
 }
 
 * {
@@ -8,6 +10,9 @@ p {
 }
 
 .container {
+    background: #F8F6F7 url(../src/img/header_bg.png) 0 0 no-repeat;
+    flex-shrink: 0;
+    overflow: hidden;
     max-width: 1200px;
     margin: auto;
     padding: 10px;
@@ -87,6 +92,22 @@ html {
 
 #td-btn {
     padding: 30px 0;
+}
+
+button {
+    background-color: #FB9475;
+    border: none;
+    border-radius: 17px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    outline: 0;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+button:hover{
+    background-color: #00BF78;
 }
 
 .search {
