@@ -1,0 +1,185 @@
+@media only screen and (max-width: 480px) {
+    @import './hamburger';
+    
+    
+    .container {
+        margin: 35px;
+        width: 990px;
+    }
+    
+    .header {
+        margin-bottom: 50px;
+    }
+    
+    .hamb_header {
+        justify-content: center;
+        }
+    
+    .header .container {
+        padding: 0;
+    }
+
+    .header__top {
+        display: none;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .navigation__list {
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+        
+    .navigation__item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 8px; 
+    }
+            
+    .phone-info {
+        text-align: center;
+    }
+
+    .hero {
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin: 0;
+    }
+
+    .hero h1 {
+        margin: 20px;
+        font-size: 32px;
+    }
+    
+    .header__social {
+        position: absolute;
+        top: 80%;
+        left: 44%;
+        transform: translateY(-1%);
+    }
+
+    .social_vertical {
+        flex-direction: row;
+    }
+    
+    .girl {
+        display: none;
+    }
+    
+    .girl figure {
+        display: none;
+    }
+
+    .about-us__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-us_text {
+        text-align: center;
+    }
+
+    .section {
+        padding: 0;
+
+        &__title {
+            text-align: center;
+            margin: 32px 0;
+            font-size: 32px;
+        }
+
+        &__adv {
+            display: flex;
+            justify-content: center;
+            // flex-direction: column;
+            &-rooms,
+            &-cosmetics,
+            &-expert {
+                width: 30%;
+            }
+        }
+
+        &__prices {
+            height: 130px;
+        }
+
+    }
+
+    .expert_exp {
+        font-size: 12px;
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+
+    .experts {
+        // flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .video-presentation {
+        width: 50%;
+        background: url(../img/img_video.png) 0 0 no-repeat;
+        background-size: contain;
+
+        &__title {
+            text-align: center;
+            top: 50%;
+            padding: 10px;
+        }
+    }
+
+    summary {
+        display: none;
+    }
+
+    .haircut,        
+    .cosmetology,
+    .manicure,        
+    .makeup,        
+    .lash,        
+    .massage {
+        display: none;
+    }
+
+    .gallery__slider {
+        margin: 0 50px 100px 50px;
+        
+    }
+
+    .gallery-brands {
+        display: NONE;
+    }
+
+    footer {
+        width: 990px;
+        padding: 0;
+
+        & .navigation {
+            display: none;
+        }
+    }
+
+    .container_form {
+        padding: 25px 0;
+        margin: 0;
+        justify-content: space-around;
+    }
+
+    .expert__photo {
+        img {
+            width: 50%;
+            background-size: contain;
+        }    
+    }
+}
+
+@media only screen and (min-height: 100px) {
+    .hamb__menu.active {
+        overflow-y: scroll;
+    }
+}
